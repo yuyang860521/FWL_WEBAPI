@@ -1,0 +1,8 @@
+{
+    "port": 3002,
+    "mongodb": {
+        "url": "mongodb://localhost/fuwaladb",
+        "debug": false,
+        "index": false
+    }
+}

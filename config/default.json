@@ -1,0 +1,39 @@
+{
+    "port": 3002,
+    "mongodb": {
+        "url": "mongodb://localhost/fuwaladb",
+        "options": {
+            "replset": {
+                "rs_name": "fuwala",
+                "poolSize": 10,
+                "socketOptions": {
+                    "keepAlive": 1000,
+                    "connectTimeoutMS": 50000,
+                    "socketTimeoutMS": 30000
+                }
+            },
+            "server": {
+                "poolSize": 5,
+                "socketOptions": {
+                    "autoReconnect": true,
+                    "keepAlive": 1000,
+                    "connectTimeoutMS": 50000,
+                    "socketTimeoutMS": 30000
+                }
+            }
+        },
+        "debug": true,
+        "index": true
+    },
+    "aliyun": {
+        "accessKeyId": "LTAIUUuKGAr1EmhS",
+        "secretAccessKey": "8jgciTZXN7f6wyDavIZv7EPK6ijKbA",
+        "endpoint": "http://oss-cn-shanghai.aliyuncs.com",
+        "apiVersion": "2013-10-15",
+        "bucket": {
+            "name": "fuwalasource"
+        },
+        "minPartSize": 1048576,
+        "suffix": "?response-content-type=image/jpg&x-oss-process=image/resize,m_fixed,h_100,w_100" // 阿里云图片路径加上suffix后，浏览器输入地址可以不用立即下载，而是显示，并且固定宽高，强制缩略
+    }
+}
