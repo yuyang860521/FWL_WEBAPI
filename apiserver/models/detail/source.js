@@ -12,6 +12,10 @@ var source = new _mongoose2.default.Schema({
         type: Number,
         required: true },
     // 资源类型: 1图片， 2视频
+    column: {
+        type: Number,
+        required: true },
+    // 栏目： 1视频， 2展示图片区， 3体育运动区， 4奶粉区
     url: {
         type: String,
         required: true },

@@ -66,8 +66,8 @@ var _koaErrorhandler = require('koa-errorhandler');var _koaErrorhandler2 = _inte
 
 
 var _api = require('./routers/api');var _api2 = _interopRequireDefault(_api);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var app = new _koa2.default(); // koa session
-app.keys = ['test', 'api']; // 若不加此方法，则存储session报错
-app.use((0, _koaConvert2.default)((0, _koaGenericSession2.default)({ prefix: "test:yy:", rolling: true, store: new _koaGenericSessionMongo2.default(_config2.default.get("mongodb")), cookie: { maxAge: 3600000 * 24, httpOnly: true, signed: true } }))); //koa 跨域
+app.keys = ['fuwala', 'api']; // 若不加此方法，则存储session报错
+app.use((0, _koaConvert2.default)((0, _koaGenericSession2.default)({ prefix: "fuwala:software:", rolling: true, store: new _koaGenericSessionMongo2.default(_config2.default.get("mongodb")), cookie: { maxAge: 3600000 * 24, httpOnly: true, signed: true } }))); //koa 跨域
 app.use((0, _koaConvert2.default)((0, _koaCors2.default)({ credentials: true, // set Access-Control-Allow-Credentials to true
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'] }))); // koa字符集
 app.use((0, _koaConvert2.default)((0, _koaCharset2.default)({ charset: 'utf8' }))); // koa HTTP参数解析

@@ -13,34 +13,36 @@ let SourceController = function() {
      * 保存上传资源信息 post
      * URL /api/source/save
      * params:
-     *          list
+     *          name
+     *          column
+     *          desc
+     *          pathstr 
+     *          type
      *
-     * list的值举例：
-     *
-     *      [
-     *          {name:'图片标题1', type:1, url:'http://xxxxxxx', description:'这里是图片描述1'},
-                {name:'图片标题2', type:1, url:'http://yyyyyyy', description:'这里是图片描述2'}
-     *      ]
      *
      * 说明：
      *      name 资源标题
+     *      column 图片所属栏目
      *      type 资源类型： 1图片， 2视频
-     *      url 图片在阿里云的路径
-     *      description 图片描述
+     *      pathstr 图片在阿里云的路径字符串，多张图以逗号分隔
+     *      desc 图片描述
      *
      * return {errcode:xxx, errmsg:xxx}
      */
     this.saveSource = function() {
         return async (ctx, next) => {
-            let {list} = ctx.request.body
+            let {name, column, desc, pathstr, type} = ctx.request.body
 
             const currTime = new Date().getTime()
-            for(let obj of list) {
-                _.assignIn(obj, {type: parseInt(obj.type), created: currTime, modified: currTime})
+            let arr = pathstr.split(",")
+            for(let i=0; i<arr.length; i++) {
+                if(arr[i]) {
+                    arr[i] = {name: name, url: arr[i], column: parseInt(column), type: parseInt(type), description: desc, created: currTime, modified: currTime}
+                }
             }
             
             let params = {
-                dataArr: list
+                dataArr: arr
             }
 
             const sourceService = new Source()
@@ -85,7 +87,8 @@ let SourceController = function() {
 
             const uploadService = new AliUpload()
             let file = ctx.request.files[0]
-            let upload = await uploadService.uploadfile(file)
+            let source = ctx.query.source
+            let upload = await uploadService.uploadfile(file, source)
             ctx.body = _.assignIn({path: upload.Location||""}, retMsg.getErrorNotice('SUCCESS'))
         }
     }

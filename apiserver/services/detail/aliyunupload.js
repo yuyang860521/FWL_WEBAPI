@@ -16,12 +16,12 @@ AliUpload = function () {
     function AliUpload() {(0, _classCallCheck3.default)(this, AliUpload);
     }(0, _createClass3.default)(AliUpload, [{ key: 'uploadfile', value: function uploadfile(
 
-        file) {
+        file, folder) {
             return new _bluebird2.default(function (resolve, reject) {
 
                 var upload = ossStream.upload({
                     Bucket: _config2.default.get('aliyun.bucket.name'),
-                    Key: new Date().getTime() + "" + 1000 + parseInt(Math.random() * 9000) + _path2.default.extname(file.name) });
+                    Key: folder + "/" + new Date().getTime() + 1000 + parseInt(Math.random() * 9000) + _path2.default.extname(file.name) });
 
                 upload.minPartSize(_config2.default.get('aliyun.minPartSize'));
 

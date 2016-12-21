@@ -11,9 +11,9 @@ import MongoStore from 'koa-generic-session-mongo'
 
 
 // koa session
-app.keys = ['test', 'api'] // 若不加此方法，则存储session报错
+app.keys = ['fuwala', 'api'] // 若不加此方法，则存储session报错
 app.use(convert(session({
-    prefix: "test:yy:",
+    prefix: "fuwala:software:",
     rolling: true,
     store: new MongoStore(config.get("mongodb")),
     cookie: {

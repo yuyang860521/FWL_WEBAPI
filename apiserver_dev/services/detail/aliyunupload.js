@@ -16,12 +16,12 @@ export default class AliUpload {
     constructor() {
     }
 
-    uploadfile(file) {
+    uploadfile(file, folder) {
       return new promise((resolve, reject) => {
 
         let upload = ossStream.upload({
             Bucket: config.get('aliyun.bucket.name'),
-            Key: new Date().getTime() + "" + 1000+parseInt(Math.random()*9000) + path.extname(file.name)
+            Key: folder + "/" + new Date().getTime() + 1000+parseInt(Math.random()*9000) + path.extname(file.name)
         })
         upload.minPartSize(config.get('aliyun.minPartSize'))
 
