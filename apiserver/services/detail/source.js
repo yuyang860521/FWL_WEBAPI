@@ -14,5 +14,25 @@ Source = function () {
         params) {
             _lodash2.default.assignIn(params, this.module);
             return new dao.Get().find(params);
+        } }, { key: 'totalCount', value: function totalCount(
+
+        params) {
+            _lodash2.default.assignIn(params, this.module);
+            return new dao.Get().totalCount(params);
+        } }, { key: 'delSource', value: function delSource(
+
+        params) {
+            _lodash2.default.assignIn(params, this.module);
+            return new dao.Update().update(params);
+        } }, { key: 'getSource', value: function getSource(
+
+        params) {
+            _lodash2.default.assignIn(params, this.module);
+            return new dao.Get().findById(params);
+        } }, { key: 'updateSource', value: function updateSource(
+
+        params) {
+            _lodash2.default.assignIn(params, this.module);
+            return new dao.Update().update(params);
         } }]);return Source;}();exports.default = Source;
 //# sourceMappingURL=source.js.map

@@ -12,7 +12,27 @@ export default class Source {
     }
 
 	sourceList(params) {
-		_.assignIn(params, this.module)
+        _.assignIn(params, this.module)
         return new dao.Get().find(params)
-    }    
+    }
+
+    totalCount(params) {
+        _.assignIn(params, this.module)
+        return new dao.Get().totalCount(params)
+    }
+
+    delSource(params) {
+        _.assignIn(params, this.module)
+        return new dao.Update().update(params)
+    }
+
+    getSource(params) {
+        _.assignIn(params, this.module)
+        return new dao.Get().findById(params)
+    }
+
+    updateSource(params) {
+        _.assignIn(params, this.module)
+        return new dao.Update().update(params)
+    }
 }

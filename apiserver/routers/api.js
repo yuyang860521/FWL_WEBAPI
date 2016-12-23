@@ -8,6 +8,9 @@ router.
 post('/api/source/save', (0, _controllers2.default)('Source').saveSource()).
 get('/api/source/list', (0, _controllers2.default)('Source').sourceList()).
 post('/api/source/upload', (0, _koaConvert2.default)((0, _koaBetterBody2.default)()), (0, _controllers2.default)('Source').uploadSource()).
+post('/api/source/del', (0, _controllers2.default)('Source').delSource()).
+get('/api/source/get', (0, _controllers2.default)('Source').sourceGet()).
+post('/api/source/update', (0, _controllers2.default)('Source').sourceUpdate()).
 
 post('/api/user/save', (0, _controllers2.default)('User').saveUser());exports.default =
 

@@ -24,6 +24,10 @@ var source = new _mongoose2.default.Schema({
         type: String,
         default: "" },
     // 资源描述
+    status: {
+        type: Number,
+        default: 1 },
+    // 是否废弃： 1在用， 0废弃
     created: {
         type: NumberLong,
         required: true },
@@ -39,6 +43,7 @@ var source = new _mongoose2.default.Schema({
 
 if (_config2.default.get("mongodb.index")) {
     source.index({ type: 1 });
+    source.index({ status: -1 });
     source.index({ created: -1 });
     source.index({ modified: -1 });
 }exports.default =
