@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../apiserver_dev/models/index.js"],"names":["User","Source"],"mappings":"qHAAA,qC;AACA,yC;;AAEIA,I;AACAC,M","file":"index.js","sourcesContent":["import User from './detail/user'\r\nimport Source from './detail/source'\r\nexport {\r\n    User,\r\n    Source\r\n}"]}

@@ -54,7 +54,7 @@ let SourceController = function() {
 
     this.sourceList = function() {
         return async (ctx, next) => {
-            let {type, start, limit} = ctx.query
+            let {type, column, start, limit} = ctx.query
 
             let params = {
                 conditions: {

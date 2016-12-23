@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../apiserver_dev/dao/index.js"],"names":["Save","Get","Update"],"mappings":"mIAAA,qC;AACA,mC;AACA,yC;;AAEIA,I;AACAC,G;AACAC,M","file":"index.js","sourcesContent":["import Save from './detail/save'\r\nimport Get from './detail/get'\r\nimport Update from './detail/update'\r\nexport {\r\n    Save,\r\n    Get,\r\n    Update\r\n}"]}
