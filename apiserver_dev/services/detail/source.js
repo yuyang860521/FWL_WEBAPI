@@ -35,4 +35,9 @@ export default class Source {
         _.assignIn(params, this.module)
         return new dao.Update().update(params)
     }
+
+    sourceOnOff(params) {
+        _.assignIn(params, this.module)
+        return new dao.Update().updateById(params)
+    }
 }

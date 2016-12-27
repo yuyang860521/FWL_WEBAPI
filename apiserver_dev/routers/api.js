@@ -11,6 +11,7 @@ router
     .post('/api/source/del', Factory('Source').delSource())
     .get('/api/source/get', Factory('Source').sourceGet())
     .post('/api/source/update', Factory('Source').sourceUpdate())
+    .post('/api/source/onoff', Factory('Source').sourceOnOff())
 
     .post('/api/user/save', Factory('User').saveUser())
 

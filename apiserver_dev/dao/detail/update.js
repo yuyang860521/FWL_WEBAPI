@@ -10,4 +10,10 @@ export default class Update extends baseDAO {
         let Model = this.getDBEngine(modelName)
         return Model.update(conditions, updates, {multi: true})
     }
+
+    updateById(params) {
+        let {id, updates, modelName} = params
+        let Model = this.getDBEngine(modelName)
+        return Model.findByIdAndUpdate(id, updates)
+    }
 }

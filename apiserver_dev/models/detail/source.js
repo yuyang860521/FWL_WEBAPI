@@ -27,7 +27,7 @@ let source = new mongoose.Schema({
     status: {
         type: Number,
         default: 1
-    }, // 是否废弃： 1在用， 0废弃
+    }, // 是否废弃： 1在用， 0废弃， 2下线
     created: {
         type: NumberLong,
         required: true

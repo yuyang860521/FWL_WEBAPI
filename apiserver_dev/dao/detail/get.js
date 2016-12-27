@@ -12,6 +12,8 @@ export default class Get extends baseDAO {
         let Model = this.getDBEngine(modelName);
         let exeObj = Model.find(conditions, columns, options);
         if(currentPage && pageSize) {
+            currentPage = parseInt(currentPage)
+            pageSize = parseInt(pageSize)
             exeObj.skip((currentPage - 1) * pageSize).limit(pageSize);
         }
         if (sort) {
