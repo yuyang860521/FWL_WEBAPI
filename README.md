@@ -1,2 +1,1 @@
-# jackpro
-my fuwala project
+project for MJ
